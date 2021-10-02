@@ -36,12 +36,10 @@
 										<header>
 											<h1>William<br />
 											Woodard</h1>
-											<p>An enthusiastic inquisitive forward-thinking first year A level student interested in electronics, coding and robotics. </p>
+											<p>An enthusiastic inquisitive forward-thinking second year A level student interested in electronics, coding and robotics. </p>
 										</header>
 										<p>This is my portfolio website. I have used it to showcase various projects that I have worked on</p>
-										<ul class="actions">
-											<li><a href="#aboutme" class="button big">Learn More</a></li>
-										</ul>
+										<button onclick=randomProject()>Click Me To Go To A Random Project</button>
 									</div>
 									<span class="image object">
 										<img src="images/tennis_scarab.jpg" alt="" />
@@ -222,6 +220,14 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<script>
+				function randomProject() {
+				const links = ["https://github.com/William-Woodard/EES","https://github.com/William-Woodard/Pioneers-Computratum","https://devpost.com/software/reading-glove","https://devpost.com/software/bin-sentry","https://devpost.com/software/hackerdog8","https://www.hillsroad.ac.uk/about-us/news-and-events/2021/01/08/hills-students-win-big-at-astrazeneca-hackathon","https://www.instructables.com/DIY-Alternator/"];
+				  var randomNumber =  Math.floor(Math.random() * (7 - 0)) + 0;
+				  window.open(links[randomNumber]);
+				}
+		</script>
 
 	</body>
 </html>
