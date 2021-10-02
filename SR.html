@@ -36,81 +36,11 @@
 										<h1>Student Robotics</h1>
 									</header>
 
-									<span class="image main"><img src="images/tennis_scarab.jpg" alt="" /></span>
+									<span class="image main"><img src="images/sr.png" alt="" /></span>
 
 									<p>
-										For my extended project qualification I made a tennis ball collecting robot. It patrols around the court and picks up any tennis balls.
-										</p>
-										
-										<p>
-										
-										I decided to do this project as it relates to what I want to do at university, general engineering. It also brings together a lot of aspects from computer science, product design and electronics, three subjects I did not take for A level but would have loved to. Additionally, all the skills I develop are transferrable and used in a very wide range of engineering jobs. 
-										</p>
-										
-										<p>
-										
-										Early on I created a Gantt chart sectioning all the different areas of the project. I made rough estimates as to how long each section would take. I used this for about a month but as my project began to unfold I made a second one with a lot more detail and more realistic timings. I learnt a lot about how I worked and how to stay productive. For example, especially while writing, I found Pomodoro method great. I also really benefitted from writing small lists each day.
-										</p>
-										
-										<p>
-										
-										I started the project by researching into projects that had made a similar thing. I found the website ‘google scholar’ really useful for finding academic papers where people had attempted this as well as just google search. It turns out a company has produced an actual product but given their website has not been updated for over two years I assume they have gone out of business. 
-										</p>
-										
-										<p>
-										
-										After taking note of the various ways people had solved the problem. I made my own design and started to model it in Fusion 360. I decided to have a four wheeled robot with a tray in the middle (so the balls can easily be taken out). Balls are propelled into the tray up a ramp by two spinning motors.
-										</p>
-										
-										<p>
-										
-										I used fusion 360 for all the CAD(computer aided design) as it is generally used in professional settings so worth learning, I did this from an online skill learning platform that I got a free trial for. Modelling was really worth doing because then I could just 3D print the complicated parts. I did this and went through the process of testing, redesigning in fusion 360 and then re printing until I got the part to function as I intended.
-										</p>
-										
-										<p>
-										
-										I then cut out an old piece of wood with a jig saw to make the chassis (The base of the robot) before mounting all the parts I had printed to it along with the motors. I again went through the designing and reprinting cycle to get everything to fit together and make the tennis ball go up the ramp I had designed. I then attached a Raspberry Pi and a motor controller along with a battery and wrote some code that would allow me to control the robot with my phone.
-										</p>
-										
-										<p>
-										
-										I was very glad I did this as the robot would pick up tennis balls fine as well as driving forwards and backwards, but it would not turn. The reason for this was the wheels were too far apart from each other so they would have had to slide horizontally to turn. On advice from a robotics expert, I replaced the 2 back motors with a caster wheel like the wheels used on shopping trolleys. I mounted this as well as strengthening the chassis as it was quite flimsy. This involved a lot of wood work which I really enjoyed. I ended up become familiar with lots of tools I had never used before such as an angle grinder, a drill, a mitre, a table saw and a dremmel.
-										</p>
-										
-										<p>
-										
-										Next, I had to work on making the robot autonomous. I decided I would add a camera and use computer vision to figure out where the tennis balls were. I also added some line sensors, so the robot knows if it is about to go onto the court. These work by shining Infra-red light towards the ground and if enough is reflected (it has an IR sensor) you know the colour underneath it is white as white reflects more than other colours. I also added a gyroscope which can act as a compass meaning the robot can turn towards the right direction when patrolling. Lastly, I added a distance sensor meaning it can sense the closest object away from it meaning I can tell it to stop before crashing into any walls.
-										</p>
-										
-										<p>
-										
-										I mounted all of these before starting work on programming. Firstly, I got all the individual parts of the project working separately. While doing this I noticed that the distance sensors I was using were very unreliable. Some research told me that using ToF(Time of Flight) sensors would be a lot more reliable. These work exactly the same as the ultrasound ones but send out photons instead of a ray of ultrasound meaning they have a much larger range.
-										</p>
-										
-										<p>
-										
-										I then started work on the computer vision, the most daunting bit of the project to me. I started my research by reading a book designed to teach the fundamentals to a beginner. The book had lots of examples that I could follow along with and taught me a lot of the basics. I then went through a lot of tutorials from people that had done a similar thing before writing my own code. I was surprised that by taking the better aspects from multiple sources I found on the internet I was able to create more reliable computer vision that any of the individual tutorials.
-										</p>
-										
-										<p>
-										
-										Once I was able to get the robot to see tennis balls, I wrote some code to make it go towards them and collect them. This worked very well for tennis balls that were within a metre of the robot but still needed improvement because it would just spin in circles if it could not see any balls. So the next bit of code I had to write was the patrolling function. This basically went straightforward (I used the compass to ensure this), whenever it sees a ball it goes and collects it, it avoids going on the court using the IR sensors as explained above and turns 90 degrees whenever it sees a wall in front of it.
-										</p>
-										
-										<p>
-										
-										The next problem with the robot is that it has lots of wires everywhere taking up space and weight. It would also not be possible to make at scale. The solution to this was for me to create a PCB (Printed Circuit Board). This is basically a board that I can mount all the electronics to that connects it all up, similar to the green boards you see at the heart of old electronics. I decided to house all the electronics on a HAT (Hardware Attached on Top) that would attach to the top of the Raspberry Pi.
-										</p>
-										
-										<p>
-										
-										Before I designed this, I decided to make a prototype board using a microcontroller instead of a Raspberry PI (the Raspberry Pi is a fully fledged computer, a microcontroller will just follow simple code and is therefore a lot simpler so if my PCB damages it, there is less of an issue). I researched into the components I wanted to use as well as following along with a series teaching me how to use KiCad, the software used to design PCBs, before going ahead and designing the HAT. This involved creating a circuit diagram before laying out all the components and the tracks between them. I got this professionally made in China and then started testing it out. I struggled a bit with the voltage converter (called a “buck converter” - the battery I use is at a very high voltage, so I need this to reduce the voltage) and never got it to fully work reliably. However, I got everything else to work well.
-										
-										</p>
-										<p>
-										
-										For the actual HAT, I used a premade buck converter as I knew this would be more reliable but everything else was very similar to the first PCB. Just on a smaller PCB designed for a Raspberry Pi. I got this made as well as a PCB for the front of the robot. This was previously occupied by a breadboard and an Arduino nano (a small microcontroller looking after all the sensors at the front of the robot). I replaced the breadboard with a simple PCB. I ordered these, soldered them, and got the code working with them. I was really pleased with the result. The HAT worked well and looked extremely professional and having a PCB at the front instead of a breadboard looked so much neater.
-										</p>
+										I competed in student robotics 2020. </p>
+										<p>Read more on <a href = "https://systemetric.hr-robocon.org/posts/new-student-robotics-competition-and-internal-competition/"> this</a>> robotics blog I wrote.</p>
 										
 
 								</section>
