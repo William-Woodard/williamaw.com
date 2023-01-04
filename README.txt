@@ -1,3 +1,7 @@
+A website I made to go along with my university application. It is no longer online.
+
+Made using the Editorial template.
+
 Editorial by HTML5 UP
 html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
